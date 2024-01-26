@@ -108,6 +108,27 @@ const HomePage = () => {
           </CXFlow.Item>
         </CXFlow.Row>
 
+        <CXFlow.Row>
+        <CXFlow.Item>
+            <CXFlow.ItemHeader>Registration</CXFlow.ItemHeader>
+            <CXFlow.ItemDescription>
+              Register on Website
+            </CXFlow.ItemDescription>
+            <CXFlow.ItemForm
+              triggerLabel="Registration"
+              eventName="Registration"
+              eventParameters={[
+                "firstName",
+                "lastName",
+                "email",
+                "phone",
+              ]}
+              cdpSDK={typeof window !== "undefined" ? window.mvpCDP : null}
+              isSDKLoaded={isLoaded}
+            />
+          </CXFlow.Item>
+        </CXFlow.Row>
+
         
 
         <CXFlow.NextStepCondition>
@@ -144,6 +165,29 @@ const HomePage = () => {
               eventParameters={[
                 "pageName",
                 "utmSource",
+                "pageURL",
+              ]}
+              cdpSDK={typeof window !== "undefined" ? window.mvpCDP : null}
+              isSDKLoaded={isLoaded}
+            />
+          </CXFlow.Item>
+        </CXFlow.Row>
+
+
+
+        <CXFlow.Row>
+        <CXFlow.Item>
+            <CXFlow.ItemHeader>Web Event</CXFlow.ItemHeader>
+            <CXFlow.ItemDescription>
+              Download Event for Brochure
+            </CXFlow.ItemDescription>
+            <CXFlow.ItemForm
+              triggerLabel="Web Event"
+              eventName="Web Event"
+              eventParameters={[
+                "eventType",
+                "eventName",
+                "eventURL",
                 "pageURL",
               ]}
               cdpSDK={typeof window !== "undefined" ? window.mvpCDP : null}
