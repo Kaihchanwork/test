@@ -147,8 +147,8 @@ const HeaderNavBar = () => {
                 setCurrentUID("");
 
                 toast({
-                  title: "Removed contactId",
-                  description: `ContactId removed`,
+                  title: "Removed crmId",
+                  description: `CRMId removed`,
                   variant: "destructive",
                 });
 
@@ -163,8 +163,8 @@ const HeaderNavBar = () => {
               setCurrentUID(uidInputRef.current?.value ?? "");
 
               toast({
-                title: "Updated ContactID",
-                description: `ContactID set to ${
+                title: "Updated CRMID",
+                description: `CRMID set to ${
                   uidInputRef.current?.value ?? ""
                 }`,
               });
@@ -176,7 +176,7 @@ const HeaderNavBar = () => {
               defaultValue={currentUID ?? undefined}
             />
             <Button className="w-44 px-1" variant="default" type="submit">
-              Set ContactId
+              Set CrmId
             </Button>
           </form>
 
