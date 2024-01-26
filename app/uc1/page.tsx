@@ -29,12 +29,12 @@ const HomePage = () => {
       <CXFlow flowName="Awareness">
         <CXFlow.Row>
           <CXFlow.Item>
-            <CXFlow.ItemHeader>PageVisit</CXFlow.ItemHeader>
+            <CXFlow.ItemHeader>Page Visit</CXFlow.ItemHeader>
             <CXFlow.ItemDescription>
-              This is a description of the Biomaterial Landing Page
+              Description
             </CXFlow.ItemDescription>
             <CXFlow.ItemForm
-              triggerLabel="View Page"
+              triggerLabel="Page Visit"
               eventName="Page Visit"
               eventParameters={[
                 "pageName",
@@ -44,40 +44,32 @@ const HomePage = () => {
               isSDKLoaded={isLoaded}
             />
           </CXFlow.Item>
-        </CXFlow.Row>
 
-        <CXFlow.Row>
-          <CXFlow.Item>
-            <CXFlow.ItemHeader>Video</CXFlow.ItemHeader>
-            <CXFlow.ItemDescription>
-              This is a description of the Video
-            </CXFlow.ItemDescription>
-            <CXFlow.ItemForm
-              triggerLabel="Play Video"
-              eventName="AEM Video Play MVP"
-              eventParameters={["videoName"]}
-              cdpSDK={typeof window !== "undefined" ? window.mvpCDP : null}
-              isSDKLoaded={isLoaded}
-            />
-          </CXFlow.Item>
 
           <CXFlow.Item>
-            <CXFlow.ItemHeader>Testimonial</CXFlow.ItemHeader>
+            <CXFlow.ItemHeader>Product Visit</CXFlow.ItemHeader>
             <CXFlow.ItemDescription>
-              This is a description of the Testimonial
+              Description
             </CXFlow.ItemDescription>
             <CXFlow.ItemForm
-              triggerLabel="Play Video"
-              eventName="AEM Video Play MVP"
-              eventParameters={["videoName"]}
+              triggerLabel="Product Page Visit"
+              eventName="Product View"
+              eventParameters={[
+                "productName",
+                "productId",
+                "productCat",
+                "pageURL",
+              ]}
               cdpSDK={typeof window !== "undefined" ? window.mvpCDP : null}
               isSDKLoaded={isLoaded}
             />
           </CXFlow.Item>
         </CXFlow.Row>
+
+        
 
         <CXFlow.NextStepCondition>
-          The user watched either the video or the testominial.
+          Brochure Page Visit
         </CXFlow.NextStepCondition>
       </CXFlow>
 
