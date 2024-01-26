@@ -106,7 +106,7 @@ const HeaderNavBar = () => {
               <NavigationMenuTrigger>Ball</NavigationMenuTrigger>
               <NavigationMenuContent>
                 <ul className="grid gap-3 p-6 md:w-[400px] lg:w-[500px] lg:grid-cols-[.75fr_1fr]">
-                  <ListItem href="/uc1-hygenist" title="Ball Journey 1">
+                  <ListItem href="/uc1" title="Ball Journey 1">
                   Reserved
                     customers.
                   </ListItem>
