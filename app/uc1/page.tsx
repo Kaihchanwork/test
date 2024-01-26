@@ -66,6 +66,48 @@ const HomePage = () => {
           </CXFlow.Item>
         </CXFlow.Row>
 
+
+        <CXFlow.Row>
+          <CXFlow.Item>
+            <CXFlow.ItemHeader>Product Like</CXFlow.ItemHeader>
+            <CXFlow.ItemDescription>
+              Description
+            </CXFlow.ItemDescription>
+            <CXFlow.ItemForm
+              triggerLabel="Product Like"
+              eventName="Product Like"
+              eventParameters={[
+                "productName",
+                "productId",
+                "productCat",
+                "pageURL",
+              ]}
+              cdpSDK={typeof window !== "undefined" ? window.mvpCDP : null}
+              isSDKLoaded={isLoaded}
+            />
+          </CXFlow.Item>
+
+
+          <CXFlow.Item>
+            <CXFlow.ItemHeader>Product Share</CXFlow.ItemHeader>
+            <CXFlow.ItemDescription>
+              Description
+            </CXFlow.ItemDescription>
+            <CXFlow.ItemForm
+              triggerLabel="Product Share"
+              eventName="Product Share"
+              eventParameters={[
+                "productName",
+                "productId",
+                "productCat",
+                "pageURL",
+              ]}
+              cdpSDK={typeof window !== "undefined" ? window.mvpCDP : null}
+              isSDKLoaded={isLoaded}
+            />
+          </CXFlow.Item>
+        </CXFlow.Row>
+
         
 
         <CXFlow.NextStepCondition>
