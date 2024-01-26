@@ -35,8 +35,11 @@ const HomePage = () => {
             </CXFlow.ItemDescription>
             <CXFlow.ItemForm
               triggerLabel="View Page"
-              eventName="AEM PageView MVP"
-              eventParameters={["pageSource1"]}
+              eventName="Page Visit"
+              eventParameters={[
+                "pageName",
+                "pageURL",
+              ]}
               cdpSDK={typeof window !== "undefined" ? window.mvpCDP : null}
               isSDKLoaded={isLoaded}
             />
