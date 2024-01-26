@@ -117,61 +117,64 @@ const HomePage = () => {
 
       <CXFlow flowName="Consideration">
         <CXFlow.Row>
-          <CXFlow.Item>
-            <CXFlow.ItemHeader>Read Clinical Study</CXFlow.ItemHeader>
-          </CXFlow.Item>
-        </CXFlow.Row>
-
-        <CXFlow.Row>
-          <CXFlow.Item>
-            <CXFlow.ItemHeader>Case Book</CXFlow.ItemHeader>
+        <CXFlow.Item>
+            <CXFlow.ItemHeader>Page Visit</CXFlow.ItemHeader>
             <CXFlow.ItemDescription>
-              A case book describing the use of the biomaterials.
+              If the pageName is "Brochure"
             </CXFlow.ItemDescription>
             <CXFlow.ItemForm
-              triggerLabel="Read Book"
-              eventName="AEM Event MVP"
-              eventParameters={["eventType"]}
+              triggerLabel="Page Visit"
+              eventName="Page Visit"
+              eventParameters={[
+                "pageName",
+                "pageURL",
+              ]}
               cdpSDK={typeof window !== "undefined" ? window.mvpCDP : null}
               isSDKLoaded={isLoaded}
             />
           </CXFlow.Item>
-
           <CXFlow.Item>
-            <CXFlow.ItemHeader>Webinar</CXFlow.ItemHeader>
+            <CXFlow.ItemHeader>Page Visit from Email</CXFlow.ItemHeader>
             <CXFlow.ItemDescription>
-              A webinar describing the use of the biomaterials.
+              If the UTM source is "Email"
             </CXFlow.ItemDescription>
             <CXFlow.ItemForm
-              triggerLabel="Book"
-              eventName="SKILL Course Booked MVP"
-              eventParameters={["courseName"]}
+              triggerLabel="Page Visit from Email"
+              eventName="Page Visit from Email"
+              eventParameters={[
+                "pageName",
+                "utmSource",
+                "pageURL",
+              ]}
               cdpSDK={typeof window !== "undefined" ? window.mvpCDP : null}
               isSDKLoaded={isLoaded}
             />
           </CXFlow.Item>
         </CXFlow.Row>
+
+        
 
         <CXFlow.NextStepCondition>
-          The user downloaded the case book or booked the webinar.
+          Product Purchase
         </CXFlow.NextStepCondition>
       </CXFlow>
 
-      <CXFlow flowName="Engagement">
+      <CXFlow flowName="Purchase">
         <CXFlow.Row>
           <CXFlow.Item>
-            <CXFlow.ItemHeader>Shop</CXFlow.ItemHeader>
+            <CXFlow.ItemHeader>Purchase</CXFlow.ItemHeader>
             <CXFlow.ItemDescription>
-              The biomaterials product pages.
+              Description
             </CXFlow.ItemDescription>
             <CXFlow.ItemForm
               triggerLabel="Purchase"
-              eventName="Eshop Ordered Product MVP"
+              eventName="Order Purchase"
               eventParameters={[
+                "id",
                 "productName",
-                "category",
-                "quantity",
-                "unitPrice",
+                "productId",
+                "unit",
+                "amount",
               ]}
               cdpSDK={typeof window !== "undefined" ? window.mvpCDP : null}
               isSDKLoaded={isLoaded}
@@ -184,6 +187,24 @@ const HomePage = () => {
           product.
         </CXFlow.NextStepCondition>
       </CXFlow>
+
+
+      <CXFlow flowName="Loyalty">
+        <CXFlow.Row>
+          <CXFlow.Item>
+            <CXFlow.ItemHeader>NA</CXFlow.ItemHeader>
+            <CXFlow.ItemDescription>
+              Description
+            </CXFlow.ItemDescription>
+           
+          </CXFlow.Item>
+        </CXFlow.Row>
+
+        <CXFlow.NextStepCondition>
+          NA
+        </CXFlow.NextStepCondition>
+      </CXFlow>
+
     </div>
   );
 };
