@@ -99,7 +99,7 @@ const CXItemForm = (props: CXItemFormProps) => {
     }
 
     const eventPayload = {
-      contactId: currentUID,
+      crmId: currentUID,
       ...data,
     };
 
@@ -163,7 +163,7 @@ const CXItemForm = (props: CXItemFormProps) => {
                   <i>anonymous</i>
                 </>
               ) : (
-                ` contactId '${currentUID}'`
+                ` crmId '${currentUID}'`
               )}
             </p>
             <Button className="mt-2" type="submit">
