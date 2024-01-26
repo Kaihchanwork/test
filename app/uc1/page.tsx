@@ -120,7 +120,7 @@ const HomePage = () => {
         <CXFlow.Item>
             <CXFlow.ItemHeader>Page Visit</CXFlow.ItemHeader>
             <CXFlow.ItemDescription>
-              If the pageName is "Brochure"
+              If the pageName is Brochure
             </CXFlow.ItemDescription>
             <CXFlow.ItemForm
               triggerLabel="Page Visit"
@@ -136,7 +136,7 @@ const HomePage = () => {
           <CXFlow.Item>
             <CXFlow.ItemHeader>Page Visit from Email</CXFlow.ItemHeader>
             <CXFlow.ItemDescription>
-              If the UTM source is "Email"
+              If the UTM source is Email
             </CXFlow.ItemDescription>
             <CXFlow.ItemForm
               triggerLabel="Page Visit from Email"
