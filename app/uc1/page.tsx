@@ -18,54 +18,25 @@ const HomePage = () => {
         <CXOverview.AttributeGroups>
           <CXOverview.AttributeGroup>
             <CXOverview.AttributeGroupName>
-              Demographical Information:
+              Criteria1:
             </CXOverview.AttributeGroupName>
 
-            <CXOverview.Attribute>Organization Type: Any</CXOverview.Attribute>
-            <CXOverview.Attribute>
-              Profession: Dental Hygenist (06)
-            </CXOverview.Attribute>
-
-            <CXOverview.Attribute>Country: UK</CXOverview.Attribute>
-          </CXOverview.AttributeGroup>
-
-          <CXOverview.AttributeGroup>
-            <CXOverview.AttributeGroupName>
-              No biomaterials purchase in past 3 months:
-            </CXOverview.AttributeGroupName>
-
-            <CXOverview.Attribute>
-              Not yet aware of biomaterials
-            </CXOverview.Attribute>
-            <CXOverview.Attribute>Starts from awareness</CXOverview.Attribute>
-          </CXOverview.AttributeGroup>
-
-          <CXOverview.AttributeGroup>
-            <CXOverview.AttributeGroupName>
-              Purchased biomaterials in past 3-6 months:
-            </CXOverview.AttributeGroupName>
-
-            <CXOverview.Attribute>
-              Aware of biomaterials, but no recent purchases
-            </CXOverview.Attribute>
-            <CXOverview.Attribute>
-              Starts from consideration
-            </CXOverview.Attribute>
-          </CXOverview.AttributeGroup>
+            <CXOverview.Attribute>Like any product</CXOverview.Attribute>
+          </CXOverview.AttributeGroup>         
         </CXOverview.AttributeGroups>
       </CXOverview>
 
       <CXFlow flowName="Awareness">
         <CXFlow.Row>
           <CXFlow.Item>
-            <CXFlow.ItemHeader>Biomaterial Landing Page</CXFlow.ItemHeader>
+            <CXFlow.ItemHeader>PageVisit</CXFlow.ItemHeader>
             <CXFlow.ItemDescription>
               This is a description of the Biomaterial Landing Page
             </CXFlow.ItemDescription>
             <CXFlow.ItemForm
               triggerLabel="View Page"
               eventName="AEM PageView MVP"
-              eventParameters={["pageSource"]}
+              eventParameters={["pageSource1"]}
               cdpSDK={typeof window !== "undefined" ? window.mvpCDP : null}
               isSDKLoaded={isLoaded}
             />
