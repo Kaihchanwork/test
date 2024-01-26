@@ -12,7 +12,7 @@ const HomePage = () => {
     <div className="flex flex-col gap-4">
       <CXOverview>
         <CXOverview.Description>
-          Test.
+          Ball Project
         </CXOverview.Description>
 
         <CXOverview.AttributeGroups>
