@@ -234,13 +234,23 @@ const HomePage = () => {
 
 
       <CXFlow flowName="Loyalty">
-        <CXFlow.Row>
-          <CXFlow.Item>
-            <CXFlow.ItemHeader>NA</CXFlow.ItemHeader>
+      <CXFlow.Row>
+        <CXFlow.Item>
+            <CXFlow.ItemHeader>Customer Day attended</CXFlow.ItemHeader>
             <CXFlow.ItemDescription>
-              Description
+              Attend Customer Day. Name: Customer Day, Status: Attended
             </CXFlow.ItemDescription>
-           
+            <CXFlow.ItemForm
+              triggerLabel="Event"
+              eventName="Event"
+              eventParameters={[
+                "eventType",
+                "eventName",
+                "eventStatus"
+              ]}
+              cdpSDK={typeof window !== "undefined" ? window.mvpCDP : null}
+              isSDKLoaded={isLoaded}
+            />
           </CXFlow.Item>
         </CXFlow.Row>
 
