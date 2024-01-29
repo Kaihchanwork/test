@@ -183,7 +183,7 @@ const HeaderNavBar = () => {
           <CXFlow.ItemForm
             triggerLabel="Create User"
             eventName="Create Customer"
-            eventParameters={["country", "profession"]}
+            eventParameters={["email", "firstName", "lastName"]}
             cdpSDK={typeof window !== "undefined" ? window.mvpCDP : null}
             isSDKLoaded={isLoaded}
           />
