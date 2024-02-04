@@ -122,6 +122,7 @@ const HomePage = () => {
                 "lastName",
                 "email",
                 "phone",
+                "pageName"
               ]}
               cdpSDK={typeof window !== "undefined" ? window.mvpCDP : null}
               isSDKLoaded={isLoaded}
