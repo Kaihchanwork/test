@@ -127,6 +127,23 @@ const HomePage = () => {
               isSDKLoaded={isLoaded}
             />
           </CXFlow.Item>
+          <CXFlow.Item>
+            <CXFlow.ItemHeader>Product Search</CXFlow.ItemHeader>
+            <CXFlow.ItemDescription>
+              Description
+            </CXFlow.ItemDescription>
+            <CXFlow.ItemForm
+              triggerLabel="Product Search"
+              eventName="Product Search"
+              eventParameters={[
+                "searchTerm",
+                "pageName",
+                "pageURL",
+              ]}
+              cdpSDK={typeof window !== "undefined" ? window.mvpCDP : null}
+              isSDKLoaded={isLoaded}
+            />
+          </CXFlow.Item>
         </CXFlow.Row>
 
         
