@@ -58,6 +58,7 @@ const HomePage = () => {
                 "productName",
                 "productId",
                 "productCat",
+                "productForm",
                 "pageURL",
               ]}
               cdpSDK={typeof window !== "undefined" ? window.mvpCDP : null}
@@ -80,6 +81,7 @@ const HomePage = () => {
                 "productName",
                 "productId",
                 "productCat",
+                "productForm",
                 "pageURL",
               ]}
               cdpSDK={typeof window !== "undefined" ? window.mvpCDP : null}
@@ -100,6 +102,7 @@ const HomePage = () => {
                 "productName",
                 "productId",
                 "productCat",
+                "productForm",
                 "pageURL",
               ]}
               cdpSDK={typeof window !== "undefined" ? window.mvpCDP : null}
@@ -235,6 +238,7 @@ const HomePage = () => {
                 "id",
                 "productName",
                 "productId",
+                "productForm",
                 "unit",
                 "amount",
               ]}
