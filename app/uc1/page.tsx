@@ -141,6 +141,8 @@ const HomePage = () => {
               eventName="Product Search"
               eventParameters={[
                 "searchTerm",
+                "flowerColor",
+                "form",
                 "pageName",
                 "pageURL",
               ]}
