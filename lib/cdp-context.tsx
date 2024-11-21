@@ -47,8 +47,8 @@ export const GigyaProvider: React.FC<gigyaProviderProps> = ({ children }) => {
       (async () => {
         const mvpSDK = await window.gigya.cdp.init({
           apiDomain: "EU5",
-          bUnitId: "4_e4__6_hgzw2_b9LVo6-oHQ",
-          appId: "HHT-s1kKO99J2bacH9LP7Q",
+          bUnitId: "4_ETsFYLshCiZp4soBquUPsA",
+          appId: "HHnO6HQLp6P1_NcS6nWZeg",
         });
 
         window.mvpCDP = mvpSDK;

@@ -135,50 +135,40 @@ const HeaderNavBar = () => {
           </NavigationMenuList>
         </NavigationMenu>
         <div className="flex gap-4">
-          <form
-            className="flex gap-2"
-            onSubmit={(submitEvent) => {
-              submitEvent.preventDefault();
+        <form
+          className="flex gap-2"
+          onSubmit={(submitEvent) => {
+            submitEvent.preventDefault();
 
-              const updatedUID = uidInputRef.current?.value ?? "";
+            const emailValue = uidInputRef.current?.value ?? "";
 
-              if (!updatedUID) {
-                window.localStorage.removeItem("_contactUID");
-                setCurrentUID("");
-
-                toast({
-                  title: "Removed crmId",
-                  description: `CRMId removed`,
-                  variant: "destructive",
-                });
-
-                return;
-              }
-
-              window.localStorage.setItem(
-                "_contactUID",
-                uidInputRef.current?.value ?? ""
-              );
-
-              setCurrentUID(uidInputRef.current?.value ?? "");
-
+            if (!emailValue) {
+              window.localStorage.removeItem("_userEmail");
               toast({
-                title: "Updated CRMID",
-                description: `CRMID set to ${
-                  uidInputRef.current?.value ?? ""
-                }`,
+                title: "Removed Email",
+                description: `Email removed`,
+                variant: "destructive",
               });
-            }}
-          >
-            <Input
-              placeholder="Provide a contact ID..."
-              ref={uidInputRef}
-              defaultValue={currentUID ?? undefined}
-            />
-            <Button className="w-44 px-1" variant="default" type="submit">
-              Set CrmId
-            </Button>
-          </form>
+              return;
+            }
+
+            window.localStorage.setItem("_userEmail", emailValue);
+
+            toast({
+              title: "Updated Email",
+              description: `Email set to ${emailValue}`,
+            });
+          }}
+        >
+          <Input
+            placeholder="Provide an email..."
+            ref={uidInputRef}
+          />
+          <Button className="w-44 px-1" variant="default" type="submit">
+            Set Email
+          </Button>
+        </form>
+
 
           <CXFlow.ItemForm
             triggerLabel="Create User"

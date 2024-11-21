@@ -34,11 +34,10 @@ const HomePage = () => {
               Description
             </CXFlow.ItemDescription>
             <CXFlow.ItemForm
-              triggerLabel="Page Visit"
-              eventName="Page Visit"
+              triggerLabel="WebsitePageView"
+              eventName="WebsitePageView"
               eventParameters={[
-                "pageName",
-                "pageURL",
+                "ipAddress",
               ]}
               cdpSDK={typeof window !== "undefined" ? window.mvpCDP : null}
               isSDKLoaded={isLoaded}
