@@ -18,10 +18,10 @@ const HomePage = () => {
         <CXOverview.AttributeGroups>
           <CXOverview.AttributeGroup>
             <CXOverview.AttributeGroupName>
-              - 
+              Web Event Trigger Page
             </CXOverview.AttributeGroupName>
 
-            <CXOverview.Attribute> - </CXOverview.Attribute>
+            <CXOverview.Attribute> - User can trigger Web Event and ingest into CMW CDP Dev Tenant </CXOverview.Attribute>
           </CXOverview.AttributeGroup>         
         </CXOverview.AttributeGroups>
       </CXOverview>
