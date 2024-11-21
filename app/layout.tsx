@@ -1,3 +1,5 @@
+"use client";
+
 import {
   PropsWithChildren,
   forwardRef,
@@ -75,16 +77,16 @@ const HeaderNavBar = () => {
   const { toast } = useToast();
 
   useEffect(() => {
-    const storedEmail = window.localStorage.getItem("_userEmail");
+    const storedUID = window.localStorage.getItem("_contactUID");
 
-    if (storedEmail) {
-      setCurrentUID(storedEmail);
+    if (storedUID) {
+      setCurrentUID(storedUID);
     }
-  }, [setCurrentUID]);
+  });
 
   useEffect(() => {
     if (!currentUID) {
-      setCurrentUID(window.localStorage.getItem("_userEmail") ?? "");
+      setCurrentUID(window.localStorage.getItem("_contactUID") ?? "");
     }
   }, [currentUID, setCurrentUID]);
 
@@ -105,11 +107,18 @@ const HeaderNavBar = () => {
               <NavigationMenuContent>
                 <ul className="grid gap-3 p-6 md:w-[400px] lg:w-[500px] lg:grid-cols-[.75fr_1fr]">
                   <ListItem href="/uc1" title="Ball Journey 1">
-                    Reserved customers.
+                  Reserved
+                    customers.
                   </ListItem>
-                  <ListItem title="Reserved">Not yet implemented</ListItem>
-                  <ListItem title="Reserved">Not yet implemented</ListItem>
-                  <ListItem title="Reserved">Not yet implemented</ListItem>
+                  <ListItem title="Reserved">
+                    Not yet implemented
+                  </ListItem>
+                  <ListItem title="Reserved">
+                    Not yet implemented
+                  </ListItem>
+                  <ListItem title="Reserved">
+                    Not yet implemented
+                  </ListItem>
                 </ul>
               </NavigationMenuContent>
             </NavigationMenuItem>
@@ -118,7 +127,7 @@ const HeaderNavBar = () => {
               <NavigationMenuContent>
                 <ul className="grid gap-3 p-6 md:w-[400px] lg:w-[500px] lg:grid-cols-[.75fr_1fr]">
                   <ListItem href="/uc2" title="Reserved">
-                    Reserved
+                  Reserved
                   </ListItem>
                 </ul>
               </NavigationMenuContent>
@@ -131,16 +140,33 @@ const HeaderNavBar = () => {
             onSubmit={(submitEvent) => {
               submitEvent.preventDefault();
 
-              // Set the email directly to "use client"
-              const updatedEmail = "use client";
+              const updatedUID = uidInputRef.current?.value ?? "";
 
-              window.localStorage.setItem("_userEmail", updatedEmail);
+              if (!updatedUID) {
+                window.localStorage.removeItem("_contactUID");
+                setCurrentUID("");
 
-              setCurrentUID(updatedEmail);
+                toast({
+                  title: "Removed crmId",
+                  description: `CRMId removed`,
+                  variant: "destructive",
+                });
+
+                return;
+              }
+
+              window.localStorage.setItem(
+                "_contactUID",
+                uidInputRef.current?.value ?? ""
+              );
+
+              setCurrentUID(uidInputRef.current?.value ?? "");
 
               toast({
-                title: "Updated Email",
-                description: `Email set to "${updatedEmail}"`,
+                title: "Updated CRMID",
+                description: `CRMID set to ${
+                  uidInputRef.current?.value ?? ""
+                }`,
               });
             }}
           >
@@ -148,10 +174,9 @@ const HeaderNavBar = () => {
               placeholder="Provide a contact ID..."
               ref={uidInputRef}
               defaultValue={currentUID ?? undefined}
-              readOnly // Make input readonly since email is fixed
             />
             <Button className="w-44 px-1" variant="default" type="submit">
-              Set Email
+              Set CrmId
             </Button>
           </form>
 
@@ -192,8 +217,8 @@ const ResetButton = () => {
           <DialogTitle>Are you sure you want to reset this page?</DialogTitle>
           <DialogDescription>
             You are about to reset this page. This will clear all the data that
-            is stored locally in your browser, including the Email and all event
-            parameters you have entered so far.
+            is stored locally in your browser, including the Contact UID and all
+            event parameters you have entered so far.
           </DialogDescription>
           <DialogDescription>
             This cannot be undone, are you sure?
