@@ -37,7 +37,7 @@ const HomePage = () => {
               triggerLabel="WebsitePageView"
               eventName="WebsitePageView"
               eventParameters={[
-                "ipAddress",
+                "pageURL",
               ]}
               cdpSDK={typeof window !== "undefined" ? window.mvpCDP : null}
               isSDKLoaded={isLoaded}
