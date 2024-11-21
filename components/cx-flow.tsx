@@ -99,7 +99,7 @@ const CXItemForm = (props: CXItemFormProps) => {
     }
 
     const eventPayload = {
-      crmId: currentUID,
+      email: currentUID,
       ...data,
     };
 
